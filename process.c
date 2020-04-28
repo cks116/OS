@@ -7,12 +7,14 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-#include <sys/time.h>  // gettimeofday have to delete
+#include <sys/time.h>  // gettimeofday have to delete // not use 
 #include <sys/types.h>
 #include <sys/syscall.h>
 #include <sys/sysinfo.h> // get cpu information
 
 #include "process.h"
+
+#define GET_TIME 338
 
 int assign_proc_cpu(pid_t pid, int cpu)
 {
@@ -57,11 +59,11 @@ int execution(struct process proc)
             // block(pid);
             printf("%d\n", pid);
         
-            syscall(338, 1, pid, &start_sec, &start_nsec);
+            syscall(GET_TIME, 1, pid, &start_sec, &start_nsec);
 
             WAIT_UNIT(proc.exec_time);
 
-            syscall(338, 0, pid, &start_sec, &start_nsec);
+            syscall(GET_TIME, 0, pid, &start_sec, &start_nsec);
             
             exit(EXIT_SUCCESS);
         }
