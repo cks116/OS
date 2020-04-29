@@ -95,6 +95,7 @@ int next_process(struct process *proc, int num_p, int policy)
 
 int scheduling(struct process *proc, int num_p, int policy)
 {
+    int last = -1;
     // Initial pid = -1 imply not ready
     for(int i = 0; i < num_p; i++)
         (proc + i)->pid = -1;
@@ -113,8 +114,7 @@ int scheduling(struct process *proc, int num_p, int policy)
     {
         if(running != -1 && (proc + running)->exec_time == 0)
         {
-            printf("%s %d\n", (proc + running)->name, (proc + running)->pid);
-            
+            last = running;
             running = -1;
             finish_cnt++;
 
@@ -150,6 +150,8 @@ int scheduling(struct process *proc, int num_p, int policy)
 
         n_time++;
     }
+
+    waitpid((proc + last)->pid, NULL, 0);
 
     return 0;
 }   
