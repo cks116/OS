@@ -341,13 +341,7 @@
 332	common	statx			sys_statx
 
 333	common	my_add			sys_my_add
-334	common	my_time			sys_my_time
-335	common	my_print		sys_my_print
-336	common	my_test			sys_my_test
-337	common	my_all			sys_my_all
-338	common	my_new			sys_my_new
-
-339	common	my_syscall_4		sys_my_syscall_4
+334	common	my_new			sys_my_new
 
 
 #

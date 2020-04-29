@@ -942,14 +942,6 @@ asmlinkage long sys_statx(int dfd, const char __user *path, unsigned flags,
 			  unsigned mask, struct statx __user *buffer);
 
 asmlinkage int sys_my_add(int a, int b);
-asmlinkage int sys_my_time(struct timespec __user *t);
-asmlinkage int sys_my_print(const char __user *s, size_t count);
-asmlinkage int sys_my_test(int __user *a);
-asmlinkage int sys_my_all(int isStart, unsigned long *start_sec,
-                           unsigned long *start_nsec, unsigned long *end_sec,
-                           unsigned long *end_nsec, int *pid);
-
 asmlinkage int sys_my_new(int isStart, int pid, unsigned long __user *start_sec, unsigned long __user *start_nsec);
-asmlinkage long sys_my_syscall_4(int, unsigned long*, unsigned long*, pid_t*);
 
 #endif

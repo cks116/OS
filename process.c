@@ -14,7 +14,7 @@
 
 #include "process.h"
 
-#define GET_TIME 338
+#define GET_TIME 334
 
 int assign_proc_cpu(pid_t pid, int cpu)
 {

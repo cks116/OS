@@ -27,7 +27,7 @@ asmlinkage int sys_my_new(int isStart, int pid, unsigned long __user *start_sec,
 		copy_from_user(kstart_sec, start_sec, sizeof(t.tv_sec));
 		copy_from_user(kstart_nsec, start_nsec, sizeof(t.tv_nsec));	
 				
-		printk("[project1] %d %lu.%09lu %lu.%09lu\n", pid, *kstart_sec, *kstart_nsec, end_sec, end_nsec);
+		printk("[Project1] %d %lu.%09lu %lu.%09lu\n", pid, *kstart_sec, *kstart_nsec, end_sec, end_nsec);
  	}
 
 	return 0;
