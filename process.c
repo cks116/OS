@@ -57,7 +57,7 @@ int execution(struct process proc)
             pid_t pid = getpid();
 
             // block(pid);
-            printf("%d\n", pid);
+            // printf("%d\n", pid);
         
             syscall(GET_TIME, 1, pid, &start_sec, &start_nsec);
 
